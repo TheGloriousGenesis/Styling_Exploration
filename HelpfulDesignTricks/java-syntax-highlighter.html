@@ -1,0 +1,58 @@
+<!-- CSS style sheets for Prism.js -->
+<link
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css"
+        rel="stylesheet"
+/>
+<link
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/line-numbers/prism-line-numbers.min.css"
+        rel="stylesheet"
+/>
+<!-- Code snippet content -->
+<pre class="line-numbers">
+  <code style="font-family: Consolas, sans-serif" class="language-java">package ThirtyDayCodeChallenge;
+
+    import java.util.Scanner;
+
+    public class Day29_BitwiseAND {
+
+        private static final Scanner scanner = new Scanner(System.in);
+
+        public static void main(String[] args) {
+            int t = scanner.nextInt();
+            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+            for (int tItr = 0; tItr < t; tItr++) {
+                String[] nk = scanner.nextLine().split(" ");
+
+                int n = Integer.parseInt(nk[0]);
+
+                int k = Integer.parseInt(nk[1]);
+
+                System.out.println(bitwise(n,k));
+            }
+
+            scanner.close();
+        }
+
+        private static int bitwise(final int n, final int k) {
+            int[] s = new int[n];
+            for (int i=0; i < n; i++) {
+                s[i] = i + 1;
+            }
+            int temp = 0;
+            for(int i = 0; i < n; i++) {
+                for(int j = i + 1; j < n; j++) {
+                    temp =  (s[i] & s[j]) < k  && (s[i] & s[j]) > temp ?
+                            (s[i] & s[j]) : temp;
+                }
+            }
+            return temp;
+        }
+    }
+
+  </code>
+</pre>
+<!-- Javascript for Prism.js core, line number display, and python syntax highlight -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-java.min.js"></script>
