@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr style="background-color: rgb(232, 53, 86); color: white">
+        <th>type</th>
+        <th>bytes</th>
+    </tr>
+    <tr>
+        <td>boolean / bytes</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>char</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>int / float</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>long / double</td>
+        <td>8</td>
+    </tr>
+    <tr style="background-color: rgb(232, 53, 86); color: white">
+        <th>ARRAYS 1D</th>
+        <th>Extra space for each array, type * N</th>
+    </tr>
+    <tr>
+        <td>char[]</td>
+        <td>2N + 24</td>
+    </tr>
+    <tr>
+        <td>int[] / float[]</td>
+        <td>4N + 24</td>
+    </tr>
+    <tr>
+        <td>long[] / double[]</td>
+        <td>8N + 24</td>
+    </tr>
+    <tr style="background-color: rgb(232, 53, 86); color: white">
+        <th>ARRAYS 2D</th>
+        <th>M row length, N column length</th>
+    </tr>
+    <tr>
+        <td>char[][]</td>
+        <td>~2MN</td>
+    </tr>
+    <tr>
+        <td>int[][] / float[][]</td>
+        <td>~4MN</td>
+    </tr>
+    <tr>
+        <td>long[][] / double[][]</td>
+        <td>~8MN</td>
+    </tr>
+</table>
+
+</body>
+</html>

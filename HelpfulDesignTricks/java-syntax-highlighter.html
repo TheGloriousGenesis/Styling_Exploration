@@ -8,13 +8,23 @@
 />
 <pre class="line-numbers">
 <code style="font-family: Consolas, sans-serif" class="language-java">
-private int root(final int element) {
-    int parent = ids[element];
-    while(!(parent == element)) {
-        ids[parent] = ids[ids[parent]];
-        parent = ids[parent];
+public int[] members;
+public PairsTimestamp[] logFiles;
+
+public PairsTimestamp socialNetworkConnectivity() {
+    int counter = 0;
+    int pointer = 0;
+    QuickUnion union = new QuickUnion(members.length);
+
+    while(counter != members.length - 1) {
+        PairsTimestamp log = logFiles[pointer];
+        if(!union.find(log.getFriend(1), log.getFriend(2))){
+            union.connect(log.getFriend(1), log.getFriend(2));
+            counter++;
+        }
+        pointer++;
     }
-    return parent;
+    return logFiles[pointer];
 }
 </code>
 </pre>
